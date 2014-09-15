@@ -36,27 +36,12 @@ namespace sl.DateiSystemProvider
             }
         }
 
-        public void DateiRelevant(string dateiNamen, Action<string> beiDateiInhalt)
+        public void DateiRelevant(string dateiname, Action<string> beiDateiInhalt)
         {
-            if (dateiNamen.EndsWith(".txt"))
-            {
-                var allText = File.ReadAllText(dateiNamen);
+            if (dateiname.EndsWith(".txt") || dateiname.EndsWith(".cs")) {
+                var allText = File.ReadAllText(dateiname);
                 beiDateiInhalt(allText);
             }
-            //try
-            //{
-            //    using (var fileStream = File.OpenRead(dateiNamen))
-            //    {
-            //        if (fileStream.CanRead)
-            //        {
-            //            // search for "\0\0", if there: no text file 
-            //        }
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //}
-            
         }
     }
 }
