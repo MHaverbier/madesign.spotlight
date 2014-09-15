@@ -18,19 +18,33 @@ namespace sl.DateiSystemProvider
 
         public void DateiRelevant(string dateiNamen, Action<string> beiDateiInhalt)
         {
-            try
+            if (dateiNamen.EndsWith(".txt"))
             {
-                using (var fileStream = File.OpenRead(dateiNamen))
+                var f = new FileInfo(dateiNamen);
+                var fileSize = f.Length;
+
+                if (fileSize <= int.MaxValue)
                 {
-                    if (fileStream.CanRead)
-                    {
-                        // search for "\0\0", if there: no text file 
-                    }
+                    var file = File.OpenRead(dateiNamen);
+                    var buffer = new byte[fileSize];
+
+                    file.Read(buffer, 0, (int) fileSize);
+                    beiDateiInhalt(buffer.ToString());
                 }
             }
-            catch (Exception)
-            {
-            }
+            //try
+            //{
+            //    using (var fileStream = File.OpenRead(dateiNamen))
+            //    {
+            //        if (fileStream.CanRead)
+            //        {
+            //            // search for "\0\0", if there: no text file 
+            //        }
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //}
             
         }
     }
