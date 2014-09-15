@@ -44,7 +44,13 @@ namespace Spotlight
 
         private static void Filtern(IEnumerable<string> dateinamen)
         {
-            _domäne.Fortschreiten(dateinamen, BeiDateiName,_consolePortal.FortschrittAnzeigen);
+            _domäne.Fortschreiten(dateinamen, dateiName =>
+            {
+                _dateiName = dateiName;
+                _dateiSystemProvider.DateiRelevant(dateiName, BeiDateiInhalt);
+            }, _consolePortal.FortschrittAnzeigen);
+
+            //_domäne.Fortschreiten(dateinamen, BeiDateiName, _consolePortal.FortschrittAnzeigen);
         }
 
         private static void BeiDateiName(string dateiName)
