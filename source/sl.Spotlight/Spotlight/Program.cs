@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using sl.ConsolePortal;
 using sl.DateiSystemProvider;
 using sl.Domaene;
 
@@ -27,7 +28,7 @@ namespace Spotlight
 
             // Initialisiert die Bausteine
             _dateiSystemProvider = new DateiSystemProvider();
-            //_consolePortal = new ...
+            _consolePortal = new ConsolePortal();
             _domäne = new Domaene();
 
             _pfad = args[0];

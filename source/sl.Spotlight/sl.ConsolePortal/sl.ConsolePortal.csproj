@@ -4,26 +4,24 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CE0E5870-AB45-48E2-BC8A-E1AC14067AC8}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{EB7202CD-BCF2-451C-AF0D-C44AC7D28018}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Spotlight</RootNamespace>
-    <AssemblyName>Spotlight</AssemblyName>
+    <RootNamespace>sl.ConsolePortal</RootNamespace>
+    <AssemblyName>sl.ConsolePortal</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -44,27 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ConsolePortal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\sl.DateiSystemProvider\sl.DateiSystemProvider\sl.DateiSystemProvider.csproj">
-      <Project>{1BAE3321-EC1A-4C9D-AB08-E889983D2F55}</Project>
-      <Name>sl.DateiSystemProvider</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\sl.Domaene\sl.Domaene\sl.Domaene.csproj">
-      <Project>{28c3e101-5fb2-4b9e-9482-6083157dbae4}</Project>
-      <Name>sl.Domaene</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\sl.ConsolePortal\sl.ConsolePortal.csproj">
-      <Project>{eb7202cd-bcf2-451c-af0d-c44ac7d28018}</Project>
-      <Name>sl.ConsolePortal</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
