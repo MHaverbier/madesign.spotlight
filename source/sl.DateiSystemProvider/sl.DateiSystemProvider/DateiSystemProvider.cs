@@ -11,9 +11,29 @@ namespace sl.DateiSystemProvider
         {
             beiFortschritt(-1);
 
-            var files = Directory.GetFiles(pfad, "*", SearchOption.AllDirectories);
+            var dateiNamen = new List<string>();
 
-            beiDateinamen(files);
+            ApplyAllFiles(pfad, dateiNamen.Add);
+            beiDateinamen(dateiNamen);
+        }
+
+        static void ApplyAllFiles(string folder, Action<string> fileAction)
+        {
+            foreach (var file in Directory.GetFiles(folder))
+            {
+                fileAction(file);
+            }
+            foreach (var subDir in Directory.GetDirectories(folder))
+            {
+                try
+                {
+                    ApplyAllFiles(subDir, fileAction);
+                }
+                catch
+                {
+                    // swallow, log, whatever
+                }
+            }
         }
 
         public void DateiRelevant(string dateiNamen, Action<string> beiDateiInhalt)
