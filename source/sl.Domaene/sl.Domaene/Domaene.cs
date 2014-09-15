@@ -19,6 +19,7 @@ namespace sl.Domaene
                 beiDateiName( dateiName );
                 dateiNummer++;
             }
+            beiFortschritt( 100 );
         }
 
         public void DateiDursuchen( string dateiNamen, string dateiInhalt, string begriff, Action<string> beiTreffer )
