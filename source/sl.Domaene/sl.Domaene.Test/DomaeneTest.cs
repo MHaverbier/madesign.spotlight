@@ -27,6 +27,23 @@ namespace sl.Domaene.Test
         }
 
         [Test]
+        public void Teste_Fortschreiten_MitVielenDateien()
+        {
+            var domaene = new Domaene();
+
+            var dateien = new List<string>( Enumerable.Range( 1, 3333 ).Select( i => string.Format( "Datei {0}.txt", i ) ) );
+
+            var gefundeneDateien = new List<string>();
+            var fortschritt = new List<int>();
+            domaene.Fortschreiten( dateien, gefundeneDateien.Add, fortschritt.Add );
+
+
+            Assert.That( gefundeneDateien, Is.EqualTo( dateien ) );
+
+            Assert.That( fortschritt, Is.EqualTo( Enumerable.Range(0, 101).ToList() ) );
+        }
+
+        [Test]
         public void DateiDurchsuchenTest()
         {
             var domaene = new Domaene();

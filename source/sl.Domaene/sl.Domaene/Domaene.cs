@@ -13,9 +13,18 @@ namespace sl.Domaene
         {
             var dateiAnzahl = dateiNamen.Count();
             var dateiNummer = 0;
+
+            var fortschritt = -1;
+
             foreach ( var dateiName in dateiNamen )
             {
-                beiFortschritt( dateiNummer * 100 / dateiAnzahl );
+                var neuerFortschritt = dateiNummer * 100 / dateiAnzahl;
+                if ( neuerFortschritt != fortschritt )
+                {
+                    fortschritt = neuerFortschritt;
+                    beiFortschritt( fortschritt );
+                }
+
                 beiDateiName( dateiName );
                 dateiNummer++;
             }
