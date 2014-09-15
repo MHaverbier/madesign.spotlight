@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using sl.kontrakte;
 
 namespace sl.ConsolePortal
@@ -16,7 +12,14 @@ namespace sl.ConsolePortal
 
         public void FortschrittAnzeigen(int fortschritt)
         {
-           Console.WriteLine(fortschritt);
+            if (fortschritt == -1)
+            {
+                Console.WriteLine("Init");
+            }
+            else
+            {
+                Console.WriteLine(fortschritt + "%");
+            }
         }
     }
 }
