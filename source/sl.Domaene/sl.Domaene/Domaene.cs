@@ -9,14 +9,24 @@ namespace sl.Domaene
 {
     public class Domaene : IDomäne
     {
-        public void Fortschreiten(IEnumerable<string> dateiNamen, Action<string> beiDateiName, Action<int> beiFortschritt)
+        public void Fortschreiten( IEnumerable<string> dateiNamen, Action<string> beiDateiName, Action<int> beiFortschritt )
         {
-            throw new NotImplementedException();
+            var dateiAnzahl = dateiNamen.Count();
+            var dateiNummer = 0;
+            foreach ( var dateiName in dateiNamen )
+            {
+                beiFortschritt( dateiNummer * 100 / dateiAnzahl );
+                beiDateiName( dateiName );
+                dateiNummer++;
+            }
         }
 
-        public void DateiDursuchen(string dateiNamen, string dateiInhalt, string begriff, Action<string> beiTreffer)
+        public void DateiDursuchen( string dateiNamen, string dateiInhalt, string begriff, Action<string> beiTreffer )
         {
-            throw new NotImplementedException();
+            if ( dateiInhalt.Contains( begriff ) )
+            {
+                beiTreffer( dateiNamen );
+            }
         }
     }
 }
