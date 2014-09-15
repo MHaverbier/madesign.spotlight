@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotlight", "Spotlight.csproj", "{CE0E5870-AB45-48E2-BC8A-E1AC14067AC8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sl.Domaene", "..\..\sl.Domaene\sl.Domaene\sl.Domaene.csproj", "{28C3E101-5FB2-4B9E-9482-6083157DBAE4}"
@@ -10,6 +8,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sl.DateiSystemProvider", "..\..\sl.DateiSystemProvider\sl.DateiSystemProvider\sl.DateiSystemProvider.csproj", "{1BAE3321-EC1A-4C9D-AB08-E889983D2F55}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sl.ConsolePortal", "..\..\sl.ConsolePortal\sl.ConsolePortal.csproj", "{EB7202CD-BCF2-451C-AF0D-C44AC7D28018}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotlight.WinForms", "..\Spotlight.WinForms\Spotlight.WinForms.csproj", "{BBFBF834-3CDE-4D46-B798-0196FBCCEE9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +33,10 @@ Global
 		{EB7202CD-BCF2-451C-AF0D-C44AC7D28018}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB7202CD-BCF2-451C-AF0D-C44AC7D28018}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB7202CD-BCF2-451C-AF0D-C44AC7D28018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBFBF834-3CDE-4D46-B798-0196FBCCEE9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBFBF834-3CDE-4D46-B798-0196FBCCEE9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBFBF834-3CDE-4D46-B798-0196FBCCEE9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBFBF834-3CDE-4D46-B798-0196FBCCEE9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
