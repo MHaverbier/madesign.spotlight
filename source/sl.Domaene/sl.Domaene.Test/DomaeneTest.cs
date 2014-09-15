@@ -23,7 +23,20 @@ namespace sl.Domaene.Test
             domaene.Fortschreiten( dateien, gefundeneDateien.Add, fortschritt.Add );
 
             Assert.That( gefundeneDateien, Is.EqualTo( dateien ) );
-            Assert.That( fortschritt, Is.EqualTo( new int[] { 0, 25, 50, 100 } ) );
+            Assert.That( fortschritt, Is.EqualTo( new int[] { 0, 25, 50, 75, 100 } ) );
+        }
+
+        [Test]
+        public void DateiDurchsuchenTest()
+        {
+            var domaene = new Domaene();
+            var treffer = new List<string>();
+
+            domaene.DateiDursuchen( "foo.txt", "ganz viel Inhalt", "viel", treffer.Add );
+            domaene.DateiDursuchen( "bar.txt", "ganz viel Inhalt", "neuer", treffer.Add );
+            domaene.DateiDursuchen( "zip.txt", "ganz viel neuer Inhalt", "neuer", treffer.Add );
+
+            Assert.That( treffer, Is.EqualTo( new[] { "foo.txt", "zip.txt" } ) );
         }
     }
 }
