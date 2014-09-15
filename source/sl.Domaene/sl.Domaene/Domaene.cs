@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using sl.kontrakte;
 
 namespace sl.Domaene
@@ -29,10 +30,12 @@ namespace sl.Domaene
             beiFortschritt( 100 );
         }
 
+
         public void DateiDursuchen( string dateiNamen, string dateiInhalt, string begriff, Action<string> beiTreffer )
         {
             if ( dateiInhalt.Contains( begriff ) )
             {
+                Thread.Sleep(500);
                 beiTreffer( dateiNamen );
             }
         }

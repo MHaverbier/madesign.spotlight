@@ -33,6 +33,7 @@ namespace Spotlight.WinForms
         public void Treffer_anzeigen(string dateiname)
         {
             listBox1.Items.Add(dateiname);
+            listBox1.Refresh();
         }
     }
 }

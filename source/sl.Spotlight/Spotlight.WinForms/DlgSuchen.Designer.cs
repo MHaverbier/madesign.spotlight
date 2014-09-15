@@ -50,7 +50,7 @@
             this.txtPfad.Name = "txtPfad";
             this.txtPfad.Size = new System.Drawing.Size(100, 20);
             this.txtPfad.TabIndex = 1;
-            this.txtPfad.Text = "..\\..\\";
+            this.txtPfad.Text = "..\\..\\..\\..\\";
             // 
             // txtBegriff
             // 
