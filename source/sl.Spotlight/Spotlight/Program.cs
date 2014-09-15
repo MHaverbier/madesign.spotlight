@@ -26,28 +26,30 @@ namespace Spotlight
                 Console.WriteLine("Programm beendet! Bitte immer mit 2 Parametern starten");
             }
 
+            _pfad = args[0];
+            _begriff = args[1];
+
             // Initialisiert die Bausteine
             _dateiSystemProvider = new DateiSystemProvider();
             _consolePortal = new ConsolePortal();
             _domäne = new Domaene();
 
-            _pfad = args[0];
-            _begriff = args[1];
-            
-            Suchen(_pfad, _begriff);
+            // integrieren
+            Suchen(_pfad);
+            Console.ReadLine();
         }
 
-        private static void Suchen(string pfad, string begriff)
+        private static void Suchen(string pfad)
         {
             _dateiSystemProvider.DateienBestimmen(pfad, Filtern, _consolePortal.FortschrittAnzeigen);
         }
 
         private static void Filtern(IEnumerable<string> dateinamen)
         {
-            _domäne.Fortschreiten(dateinamen, foo,_consolePortal.FortschrittAnzeigen);
+            _domäne.Fortschreiten(dateinamen, BeiDateiName,_consolePortal.FortschrittAnzeigen);
         }
 
-        private static void foo(string dateiName)
+        private static void BeiDateiName(string dateiName)
         {
             _dateiName = dateiName;
             _dateiSystemProvider.DateiRelevant(dateiName, BeiDateiInhalt);

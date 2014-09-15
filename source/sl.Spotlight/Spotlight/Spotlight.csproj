@@ -52,9 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\sl.DateiSystemProvider\sl.DateiSystemProvider\sl.DateiSystemProvider.csproj">
-      <Project>{1BAE3321-EC1A-4C9D-AB08-E889983D2F55}</Project>
+      <Project>{1bae3321-ec1a-4c9d-ab08-e889983d2f55}</Project>
       <Name>sl.DateiSystemProvider</Name>
-      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\sl.Domaene\sl.Domaene\sl.Domaene.csproj">
       <Project>{28c3e101-5fb2-4b9e-9482-6083157dbae4}</Project>
