@@ -20,17 +20,8 @@ namespace sl.DateiSystemProvider
         {
             if (dateiNamen.EndsWith(".txt"))
             {
-                var f = new FileInfo(dateiNamen);
-                var fileSize = f.Length;
-
-                if (fileSize <= int.MaxValue)
-                {
-                    var file = File.OpenRead(dateiNamen);
-                    var buffer = new byte[fileSize];
-
-                    file.Read(buffer, 0, (int) fileSize);
-                    beiDateiInhalt(buffer.ToString());
-                }
+                var allText = File.ReadAllText(dateiNamen);
+                beiDateiInhalt(allText);
             }
             //try
             //{
